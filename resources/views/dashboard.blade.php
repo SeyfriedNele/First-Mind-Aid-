@@ -6,6 +6,6 @@
     </x-slot>
 
     <x-backdrop>
-        {{ __("Welcome to the FirstMindAid!") }}
+        {{ __("Share your ideas and explore the ideas of others") }}
     </x-backdrop>
 </x-app-layout>

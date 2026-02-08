@@ -18,16 +18,13 @@
             <p class="text-sm text-zinc-400 mt-2">
                 Erstellt am {{ $kit->created_at->format('d.m.Y H:i') }}
             </p>
-            <p class="text-sm text-zinc-400 mt-2">
-                Erstellt von {{ $kit->createdby->name }}
-            </p>
         </div>
 
         <div class="mt-6 flex items-center justify-between gap-x-6">
             <div class="flex items-center gap-x-6">
                 <a href="{{ route('kit.index') }}" class="text-sm/6 font-semibold text-yellow-200">Back</a>
 
-
+                @if (Auth::id() === $kit->created_by)
                 <x-button
                     form="edit-form"
                     href="{{ route('kit.edit', $kit) }}"
@@ -45,6 +42,7 @@
                     Delete
                 </button>
             </div>
+                @endif
         </div>
 
         <form
